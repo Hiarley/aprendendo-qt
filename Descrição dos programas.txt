@@ -1,0 +1,10 @@
+---------------------------------
+Descrição dos programas
+Autores: Luan, Danilo
+---------------------------------
+
+- Teste2
+Calculadora utilizando interface gráfica.
+
+- Janelas
+Programa que possui duas janelas, sendo uma QDialog. Existe a comunicação entre as duas por signals e slots.
