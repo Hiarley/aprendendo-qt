@@ -8,3 +8,6 @@ Calculadora utilizando interface gráfica.
 
 - Janelas
 Programa que possui duas janelas, sendo uma QDialog. Existe a comunicação entre as duas por signals e slots.
+
+- Teste5
+Programa que vizualiza imagens do computador, inverte cores e salva a imagem.
