@@ -7,6 +7,7 @@
 #include <QImage>
 #include <QPixmap>
 #include <QMessageBox>
+#include <pag2.h>
 
 namespace Ui {
 class teste5;
@@ -20,16 +21,23 @@ public:
     explicit teste5(QWidget *parent = 0);
     ~teste5();
 
-    QImage imagem, imagem2;
+    QImage imagem2;
+
+public:
+    pag2 pag;
 
 public slots:
     void abrir();
     void inverter();
     void salvar();
     void sair();
-    
+
+
 private:
     Ui::teste5 *ui;
 };
+
+
+
 
 #endif // TESTE5_H
