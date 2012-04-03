@@ -12,10 +12,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         teste5.cpp \
-    pag2.cpp
+    pag2.cpp \
+    brilho.cpp
 
 HEADERS  += teste5.h \
-    pag2.h
+    pag2.h \
+    brilho.h
 
 FORMS    += teste5.ui \
-    pag2.ui
+    pag2.ui \
+    brilho.ui
