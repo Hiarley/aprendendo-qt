@@ -11,8 +11,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        teste5.cpp
+        teste5.cpp \
+    pag2.cpp
 
-HEADERS  += teste5.h
+HEADERS  += teste5.h \
+    pag2.h
 
-FORMS    += teste5.ui
+FORMS    += teste5.ui \
+    pag2.ui

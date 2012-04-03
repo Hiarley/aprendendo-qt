@@ -11,6 +11,9 @@ teste5::teste5(QWidget *parent) :
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(inverter()));
     connect(ui->actionSalvar, SIGNAL(triggered()), this, SLOT(salvar()));
     connect(ui->actionSair, SIGNAL(triggered()), this, SLOT(sair()));
+
+
+
 }
 
 teste5::~teste5()
@@ -21,7 +24,7 @@ teste5::~teste5()
 void teste5::abrir(){
 
     QString fn = QFileDialog::getOpenFileName(this, "Abrir Imagem", "C:\\", "Imagem *.jpg *.png", NULL);
-    imagem.load(fn);
+    pag.imagem.load(fn);
     imagem2.load(fn);
 
     if(fn.compare(fn,"")==0){  // Se livrando do bug que quando fecha a janela de selecionar arquivo.
@@ -29,8 +32,8 @@ void teste5::abrir(){
     }
 else{
 
-   imagem2 = imagem.scaledToHeight(301); // Dimensionando a imagem para 301 por 271
-   imagem2 = imagem.scaledToWidth(271);
+   imagem2 = pag.imagem.scaledToHeight(301); // Dimensionando a imagem para 301 por 271
+   imagem2 = pag.imagem.scaledToWidth(271);
 
    ui->label_imagem1->setPixmap(QPixmap::fromImage(imagem2));
 
@@ -45,10 +48,10 @@ void teste5::inverter(){
 
     // A imagem2 é apenas para vizualizaçao, o que é salvo é o imagem com o tamanho normal.
 
-    imagem2 = imagem.scaledToHeight(301); // Dimensionando a imagem para 301 por 271
-    imagem2 = imagem.scaledToWidth(271);
+    imagem2 = pag.imagem.scaledToHeight(301); // Dimensionando a imagem para 301 por 271
+    imagem2 = pag.imagem.scaledToWidth(271);
 
-    imagem.invertPixels();
+    pag.imagem.invertPixels();
     imagem2.invertPixels(); // apenas para ser motrado invertido
 
 
@@ -61,15 +64,10 @@ void teste5::inverter(){
 
 void teste5::salvar(){
 
-    QString file = QFileDialog::getSaveFileName(this, "Salvar Imagem", "C://","JPG (*.jpg)", NULL);
+    pag.setWindowTitle("Visualizaçao");
+    pag.visualizacao();
+    pag.show();
 
-    if(file.compare(file,"")==0){
-
-    }
-    else{
-    imagem.save(file);
-     QMessageBox::information(this, "Salvar", "A imagem foi salva com sucesso");
-}
 
     }
 
