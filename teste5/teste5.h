@@ -8,6 +8,7 @@
 #include <QPixmap>
 #include <QMessageBox>
 #include <pag2.h>
+#include <brilho.h>
 
 namespace Ui {
 class teste5;
@@ -25,12 +26,17 @@ public:
 
 public:
     pag2 pag;
+public:
+    brilho br;
 
 public slots:
     void abrir();
+    void vis_imagem();
     void inverter();
     void salvar();
     void sair();
+    void abrir_brilho();
+    void receber_brilho();
 
 
 private:

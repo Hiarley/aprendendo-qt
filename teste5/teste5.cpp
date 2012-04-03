@@ -11,6 +11,8 @@ teste5::teste5(QWidget *parent) :
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(inverter()));
     connect(ui->actionSalvar, SIGNAL(triggered()), this, SLOT(salvar()));
     connect(ui->actionSair, SIGNAL(triggered()), this, SLOT(sair()));
+    connect(ui->actionInverter, SIGNAL(triggered()), this, SLOT(inverter()));
+    connect(ui->actionBrilho, SIGNAL(triggered()), this, SLOT(abrir_brilho()));
 
 
 
@@ -42,7 +44,7 @@ else{
 }
 }
 
-void teste5::inverter(){
+void teste5::vis_imagem(){
 
     ui->label_imagem2->show();
 
@@ -51,11 +53,17 @@ void teste5::inverter(){
     imagem2 = pag.imagem.scaledToHeight(301); // Dimensionando a imagem para 301 por 271
     imagem2 = pag.imagem.scaledToWidth(271);
 
+    ui->label_imagem2->setPixmap(QPixmap::fromImage(imagem2));
+}
+
+void teste5::inverter(){
+
+
+
     pag.imagem.invertPixels();
     imagem2.invertPixels(); // apenas para ser motrado invertido
 
-
-    ui->label_imagem2->setPixmap(QPixmap::fromImage(imagem2));
+    vis_imagem();
 
     QMessageBox::information(this, "Informaçao!", "As cores da imagem foram invertidas!");
 
@@ -93,6 +101,29 @@ void teste5::sair(){
         break;
     }
 
+
+}
+
+void teste5::abrir_brilho(){
+    br.setWindowTitle("Brilho");
+
+br.imagem3 = pag.imagem;
+
+br.show();
+
+connect(br, SIGNAL(enviar), this, SLOT(receber_brilho())); // ONDE ESTÁ O ERRO
+
+/* Imagem 3 está em Brilho, recebe a Imagem, depois modifica o brilho, chama o Receber brilho: A imagem3 com
+brilho modificado passa para Imagem (Que é a QImage que vai ser salva) e para a Imagem2(A QImage que visualiza ao usuario)
+
+
+*/
+}
+void teste5::receber_brilho(){
+
+    pag.imagem = br.imagem3;
+    imagem2 = br.imagem3;
+    vis_imagem();
 
 }
 

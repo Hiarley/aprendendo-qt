@@ -97,7 +97,15 @@
     <addaction name="actionSalvar"/>
     <addaction name="actionSair"/>
    </widget>
+   <widget class="QMenu" name="menuEditar">
+    <property name="title">
+     <string>Editar</string>
+    </property>
+    <addaction name="actionInverter"/>
+    <addaction name="actionBrilho"/>
+   </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menuEditar"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -121,6 +129,16 @@
   <action name="actionSair">
    <property name="text">
     <string>Sair</string>
+   </property>
+  </action>
+  <action name="actionInverter">
+   <property name="text">
+    <string>Inverter</string>
+   </property>
+  </action>
+  <action name="actionBrilho">
+   <property name="text">
+    <string>Brilho</string>
    </property>
   </action>
  </widget>
