@@ -20,7 +20,7 @@ public:
     ~brilho();
 
     QImage imagem3;
-
+    int mostrar; // Faltou declarar esse mostrar
 
 public slots:
     void mais();
@@ -28,6 +28,9 @@ public slots:
     
 private slots:
     void on_pushButton_3_clicked();
+
+signals:
+    void enviar(); // Faltou declarar o sinal
 
 private:
     Ui::brilho *ui;
