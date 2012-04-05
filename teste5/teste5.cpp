@@ -105,24 +105,26 @@ void teste5::sair(){
 }
 
 void teste5::abrir_brilho(){
-    br.setWindowTitle("Brilho");
+    br = new brilho();
 
-br.imagem3 = pag.imagem;
+    br->setWindowTitle("Brilho");
 
-br.show();
+    br->imagem3 = pag.imagem;
 
-connect(br, SIGNAL(enviar), this, SLOT(receber_brilho())); // ONDE ESTÁ O ERRO
+    br->show();
 
-/* Imagem 3 está em Brilho, recebe a Imagem, depois modifica o brilho, chama o Receber brilho: A imagem3 com
-brilho modificado passa para Imagem (Que é a QImage que vai ser salva) e para a Imagem2(A QImage que visualiza ao usuario)
+    connect(br, SIGNAL(enviar()), this, SLOT(receber_brilho())); // corrigido!
+
+    /* Imagem 3 está em Brilho, recebe a Imagem, depois modifica o brilho, chama o Receber brilho: A imagem3 com
+    brilho modificado passa para Imagem (Que é a QImage que vai ser salva) e para a Imagem2(A QImage que visualiza ao usuario)
 
 
-*/
+    */
 }
 void teste5::receber_brilho(){
 
-    pag.imagem = br.imagem3;
-    imagem2 = br.imagem3;
+    pag.imagem = br->imagem3;
+    imagem2 = br->imagem3;
     vis_imagem();
 
 }

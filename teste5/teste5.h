@@ -27,7 +27,7 @@ public:
 public:
     pag2 pag;
 public:
-    brilho br;
+    brilho *br; // Ponteiro
 
 public slots:
     void abrir();
