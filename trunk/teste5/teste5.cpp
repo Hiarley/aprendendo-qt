@@ -7,12 +7,14 @@ teste5::teste5(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ajust = new ajustar();
     connect(ui->actionAbrir, SIGNAL(triggered()), this, SLOT(abrir()));
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(inverter()));
     connect(ui->actionSalvar, SIGNAL(triggered()), this, SLOT(salvar()));
     connect(ui->actionSair, SIGNAL(triggered()), this, SLOT(sair()));
     connect(ui->actionInverter, SIGNAL(triggered()), this, SLOT(inverter()));
     connect(ui->actionBrilho, SIGNAL(triggered()), this, SLOT(abrir_brilho()));
+    connect(ui->actionAjustar, SIGNAL(triggered()), this ,SLOT(abrir_ajuste()));
 
 
 
@@ -28,6 +30,8 @@ void teste5::abrir(){
     QString fn = QFileDialog::getOpenFileName(this, "Abrir Imagem", "C:\\", "Imagem *.jpg *.png", NULL);
     pag.imagem.load(fn);
     imagem2.load(fn);
+    imagem_reserva = imagem2;
+
 
     if(fn.compare(fn,"")==0){  // Se livrando do bug que quando fecha a janela de selecionar arquivo.
 
@@ -105,11 +109,13 @@ void teste5::sair(){
 }
 
 void teste5::abrir_brilho(){
-    br = new brilho();
 
+    br = new brilho();
     br->setWindowTitle("Brilho");
 
     br->imagem3 = pag.imagem;
+
+    vis_imagem();
 
     br->show();
 
@@ -117,16 +123,59 @@ void teste5::abrir_brilho(){
 
     /* Imagem 3 está em Brilho, recebe a Imagem, depois modifica o brilho, chama o Receber brilho: A imagem3 com
     brilho modificado passa para Imagem (Que é a QImage que vai ser salva) e para a Imagem2(A QImage que visualiza ao usuario)
-
-
     */
 }
 void teste5::receber_brilho(){
 
-    pag.imagem = br->imagem3;
-    imagem2 = br->imagem3;
+    if(br->op==1){
+        pag.imagem = imagem_reserva;
+        imagem2 = imagem_reserva;
+        br->imagem3 = imagem_reserva;
+
+    vis_imagem();
+}
+    else{
+        pag.imagem = br->imagem3;
+        imagem2 = br->imagem3;
+        vis_imagem();
+    }
+
+
+}
+
+void teste5::abrir_ajuste(){
+
+    ajust = new ajustar();
+    ajust->setWindowTitle("Ajustar");
+    ajust->imagem4 = pag.imagem;
+
+vis_imagem();
+
+ajust->show();
+ajust->visualizar_pixels();
+
+connect(ajust, SIGNAL(ajuste_concluido()), this, SLOT(receber_ajuste()));
+
+}
+void teste5::receber_ajuste(){
+
+    if(ajust->op==1){
+    pag.imagem = imagem_reserva;
+    imagem2 = imagem_reserva;
+    ajust->imagem4 = imagem_reserva;
     vis_imagem();
 
+    }
+    else{
+
+
+        imagem2 = ajust->imagem4;
+        pag.imagem = ajust->imagem4;
+        ajust->imagem4 = imagem_reserva;
+
+        vis_imagem();
+
+}
 }
 
 

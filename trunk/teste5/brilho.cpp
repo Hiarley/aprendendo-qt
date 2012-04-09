@@ -11,8 +11,6 @@ brilho::brilho(QWidget *parent) :
     connect(ui->me, SIGNAL(clicked()), this, SLOT(menos()));
 
 
-    int mostrar = 0;
-
 }
 
 brilho::~brilho()
@@ -20,7 +18,9 @@ brilho::~brilho()
     delete ui;
 }
 
+int mostrar=0;
 void brilho::mais(){
+    op=0;
     int h, w;
 
     QString mostra2;
@@ -35,9 +35,9 @@ void brilho::mais(){
              int g = QColor(imagem3.pixel(x,y)).green();
              int b = QColor(imagem3.pixel(x,y)).blue();
 
-            r = r + 50;
-            g = g + 50;
-            b = b + 50;
+            r = r + 10;
+            g = g + 10;
+            b = b + 10;
 
             if(r>255){
             r = 254;
@@ -69,7 +69,7 @@ void brilho::mais(){
 
 }
 void brilho::menos(){
-
+op=0;
     int h, w;
 
     QString mostra2;
@@ -84,9 +84,9 @@ void brilho::menos(){
              int g = QColor(imagem3.pixel(x,y)).green();
              int b = QColor(imagem3.pixel(x,y)).blue();
 
-            r = r - 50;
-            g = g - 50;
-            b = b - 50;
+            r = r - 10;
+            g = g - 10;
+            b = b - 10;
 
             if(r < 0){
             r = 1;
@@ -119,4 +119,14 @@ void brilho::menos(){
 void brilho::on_pushButton_3_clicked()
 {
     this->close();
+}
+
+void brilho::on_pushButton_normal_clicked()
+{
+    op=1;
+    mostrar = 0;
+    QString mostra2;
+    mostra2.setNum(mostrar);
+    ui->result->setText(mostra2);
+    emit enviar();
 }
