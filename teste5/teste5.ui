@@ -103,6 +103,7 @@
     </property>
     <addaction name="actionInverter"/>
     <addaction name="actionBrilho"/>
+    <addaction name="actionAjustar"/>
    </widget>
    <addaction name="menuMenu"/>
    <addaction name="menuEditar"/>
@@ -139,6 +140,11 @@
   <action name="actionBrilho">
    <property name="text">
     <string>Brilho</string>
+   </property>
+  </action>
+  <action name="actionAjustar">
+   <property name="text">
+    <string>Ajustar</string>
    </property>
   </action>
  </widget>

@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <pag2.h>
 #include <brilho.h>
+#include <ajustar.h>
 
 namespace Ui {
 class teste5;
@@ -17,17 +18,19 @@ class teste5;
 class teste5 : public QMainWindow
 {
     Q_OBJECT
-    
+
 public:
     explicit teste5(QWidget *parent = 0);
     ~teste5();
 
-    QImage imagem2;
+    QImage imagem2, imagem_reserva;
 
 public:
     pag2 pag;
 public:
-    brilho *br; // Ponteiro
+    brilho *br;
+public:
+    ajustar *ajust;
 
 public slots:
     void abrir();
@@ -37,6 +40,8 @@ public slots:
     void sair();
     void abrir_brilho();
     void receber_brilho();
+    void abrir_ajuste();
+    void receber_ajuste();
 
 
 private:
