@@ -10,4 +10,7 @@ Calculadora utilizando interface gráfica.
 Programa que possui duas janelas, sendo uma QDialog. Existe a comunicação entre as duas por signals e slots.
 
 - Teste5
-Programa que vizualiza imagens do computador, inverte cores e salva a imagem.
+Programa que vizualiza imagens do computador, inverte cores, salva a imagem, aplica efeitos. 
+
+- SuperMercado
+Programa que utiliza SQLite, compras de produtos.
