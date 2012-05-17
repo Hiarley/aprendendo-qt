@@ -14,3 +14,6 @@ Programa que vizualiza imagens do computador, inverte cores, salva a imagem, apl
 
 - SuperMercado
 Programa que utiliza SQLite, compras de produtos.
+
+- Calculadora
+Programa ANDROID, rodado no eclipse(JAVA), é uma calculadora comum com função de somar.
