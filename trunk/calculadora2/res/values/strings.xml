@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calculadora2</string>
+    <string name="Snum1">Digite o Primeiro número:</string>
+    <string name="Snum2">Digite o Segundo número:</string>
+    <string name="Ssomar">Somar</string>
+    <string name="Ssub">Subtrair</string>
+    <string name="Smult">Multiplicar</string>
+    <string name="Sdiv">Dividir</string>
+    <string name="Sres">Resultado:</string>
+    
+
+</resources>
