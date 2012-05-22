@@ -20,3 +20,6 @@ Programa ANDROID, feito no eclipse(JAVA), é uma calculadora comum com função de 
 
 - Calculadora2
 Programa ANDROID, feito no eclipse(JAVA), finalizando a calculadora, com função de somar, subtrair, multiplicar e dividir. 
+
+- Feira
+Programa Android que simula compras em uma feira, utilizando Chackbox, radiobutton, alert, evento.
