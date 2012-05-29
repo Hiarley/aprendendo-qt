@@ -29,3 +29,6 @@ Programa Android que faz passagem de janelas, há interações entre janelas.
 
 - Imagens
 Programa Android, utiliza botões com imagens, trocas de janelas.
+
+- Galeria
+Programa Android, visualiza uma galeria de imagens
