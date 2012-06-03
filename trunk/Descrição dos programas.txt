@@ -12,6 +12,9 @@ Programa que possui duas janelas, sendo uma QDialog. Existe a comunicação entre 
 - Teste5
 Programa que vizualiza imagens do computador, inverte cores, salva a imagem, aplica efeitos. 
 
+- Imagem_opencv
+Programa que utiliza as funções básicas do OpenCV.
+
 - SuperMercado
 Programa que utiliza SQLite, compras de produtos.
 
