@@ -47,3 +47,6 @@ Programa para o projeto de detecção de estabilidade de sistemas no Android.
 
 - Aplicacao_OpenGL
 Programa em QT que utiliza OpenGL na criação de imagens
+
+- My_week
+Programa para o projeto My Week para Android.
