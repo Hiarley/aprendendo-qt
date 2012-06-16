@@ -50,3 +50,6 @@ Programa em QT que utiliza OpenGL na criação de imagens
 
 - My_week
 Programa para o projeto My Week para Android.
+
+- Piramide_Opengl
+Programa em QT, utilizando OpenGL
