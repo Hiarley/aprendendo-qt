@@ -53,3 +53,6 @@ Programa para o projeto My Week para Android.
 
 - Piramide_Opengl
 Programa em QT, utilizando OpenGL
+
+-And_openGL
+Programa em Android que utiliza OpenGL, muda a cor do papel de parede, de acordo com o toque
