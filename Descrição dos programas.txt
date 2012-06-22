@@ -56,3 +56,6 @@ Programa em QT, utilizando OpenGL
 
 -And_openGL
 Programa em Android que utiliza OpenGL, muda a cor do papel de parede, de acordo com o toque
+
+-And_openGL2
+Programa em Android que utiliza OpenGL, constroi um triangulo no centro, a Tela em FullScreen
