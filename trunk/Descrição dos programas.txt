@@ -59,3 +59,12 @@ Programa em Android que utiliza OpenGL, muda a cor do papel de parede, de acordo
 
 -And_openGL2
 Programa em Android que utiliza OpenGL, constroi um triangulo no centro, a Tela em FullScreen
+
+_And_camera
+Programa em Android, usa a câmera do android e tira foto
+
+
+
+
+
+
